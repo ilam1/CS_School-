@@ -1,0 +1,183 @@
+05-20:
+We both planned ideas for the final project: 
+-Themes include a Disney, Divergent, or Harry Potter-based Stuyvesant.
+-Potential interactions with users include polls (based on the theme), a calendar, a history log, and a map with locations highlighted (i.e. for the most recommended places to eat) 
+
+05-21:
+We both began basic formatting of website on github
+
+05-23:
+Tiffany: Created the homepage for the website (that provides the options of creating an account and logging in, essentially an introduction to the website without the user features)
+
+Irene: 
+-Added various css code (i.e. background color, h1, h2, h3, p)
+-Added username to the mainpage url to identify the user.
+-Began to set up the initial aptitude test (currently in the makePage function but titled Test 1 in the below log for convenience of reference) that new users will take to determine their initial faction (results are concrete upon finishing the test). The test is currently in a form that can be submitted with radio buttons for answers.  
+-Began to set up another test users can take to determine if they are suitable for a specific faction (i.e. the Erudite test contains probability, sequence, chemistry, etc. questions), in which questions are scored on an Correct/ Incorrect basis. Scores for this test will be recorded to the users profile, but will not change the user's original faction result (from Test 1)
+
+05-24:
+We both made test questions for Test 1. 
+
+Irene:
+-Fixed minor errors in Test 1 (currently 12:55AM so technically speaking it is the 24th, but the errors are a continuation of uncompleted work from 0523 that happened to pass midnight on marge...) Questions/ answers appear in a readable format.
+-Moved the test code from the mainpage.py to test1.py to make the code more organized. 
+
+05-25:
+Tiffany:
+-Began the blog (ideas and authentication via cookie)
+
+Irene:
+-Created test2.py that users already in a faction are able to take to test their compatibility with a certain faction. Checking multiple checkboxes produces a test in which questions from all of the checked factions are given randomly.
+-Modified Test 1 to contain a list of nest lists with multiple strings to make sentences more grammatically correct. Also added a point system for each question and a function that determines the user's faction depending on the category they get the highest score in.
+
+05-26:
+Tiffany:
+-Continued the blog (i.e. ability for users to post and to view all posts <from oldest at the top to most recent at the bottom)
+
+Irene:
+-Modified Test 1 to contain a list of 5 answer multiple choice questions instead of 2 to prevent imbalances (i.e. more opportunaties to receive abnegation points than erudite points). Also allows users to choose their faction among a list of factions that they got the highest score in if they have ties in highest score for more than one faction. 
+-Added username to test1.py but am experiencing issues keeping the username after submitting the form (which is necessary to append the faction result to the correct user in users.txt). Created a function to add faction to user's corresponding data in users.txt (untested).
+
+05-27:
+Tiffany:
+-Continued blog (working on commenting and ability for users to reply to posts)
+
+Irene:
+-Modified Test 1 by making all code in functions to be printed at the end
+  -Point system to calculate points
+  -Faction result that will send the result to another function (which adds the info to users.txt) if the user conclusively obtains one faction from the aptitude test, or shows a pull down menu that allows users to choose among the factions they scored the highest in if there is a tie for their most suitable faction
+  -Helper function + replacement function (called realfacresult) which is responsible for overwriting information currently in users.txt, but with the faction result for the respective user).
+-Added authentication information (to allow the scores to be appended to their respective information in users.txt)
+-Note: Many errors. The aptitude test will show, but problems are occurring with correct authentication for users, correct order of functions, and minor type errors (i.e. concatenating strings and lists)
+
+
+05-28:
+Irene:
+-Modified minor errors on Test 1 (currently works as of 12:18AM!! but further tests needed)
+-Working on changing the page after submitting answers
+-Created a html page for Stuyvesant's map with a vertical navagational panel for each of Stuy's 10 floors (some css i.e. "active" class, changing the background color when the user mouses over the tab)
+ 
+05-30:
+Tiffany:
+-Worked on comment section of blog
+
+Irene:
+-Modified Test 2 
+  -Makes a list of test questions depending on the checked boxes of factions
+  -Receives a number (of total questions). If the number exceeds the total number of questions, all of the questions and a message are returned. If the number is less than 1, nothing is returned. If the number is less than the number of questions on the test, random parts of the test are removed until the question number is met.
+-Note: Test 2 currently has a NameError
+
+05-31:
+Tiffany:
+-Worked on creating comments (reply feature) for the blog
+
+Irene:
+-Added various pictures under a separate file (for potential use as a background image)
+-Modified Test 2 (Error in producing the list)
+
+06-01:
+Tiffany:
+-Worked on comment section of blog
+
+Irene:
+-Modified Test 2
+  -Test will print results based on the total number of questions
+  -Error: The test questions are lost somewhere in the code (but for some reason the test still prints out even though before the print command, test is an empty list...)
+  -Working on grading (message + points after submitting the answers)
+
+06-02:
+Tiffany:
+-Modified mainpage to send users to test (if factionless) or blog (if a faction is determined)
+-Fixed bug in blog.py
+
+Irene:
+-Fixed errors in Test 2 (currently works but needs test questions/ answers along with test 1)
+-Found an error in Test 1 (option for taking the test even after taking the test)
+-Modified the stuymap such that the vertical navigation bar is changed to a horizontal pill bar
+
+06-03:
+Tiffany:
+-Added links to mainpage (blog, test1, test2)
+-Made comment code of blog more efficient
+
+Irene:
+-More css edits on stuymap
+-Preparing to use button explanation for images on stuymap
+
+06-04:
+Irene:
+-Stuymap
+  -Major testing with balloons (failed), (shadow, hover, animated, 3D, ripple effect, etc.) buttons (failed) to get a nicely organized text to be displayed without needing to click on image (failed)
+  -Somewhat succeeded (in Floor 3) with styling and placing text over image <taken from Geek Girl Life: http://geekgirllife.com/place-text-over-images-on-hover-without-javascript/> (continued on 06-05)
+
+06-05:
+Tiffany:
+-Modified test1.py to prevent factions from continuously being added to the end and to work with mainpage.py
+
+Irene: 
+-Stuymap
+  -Placed images in table in order to show multiple images/descriptions per floor 
+  -Note: not very efficient (i.e. dimensions of text over image need to be personally modified), also lack of images to test, visually doesn't look appealing (i.e. either the images are touching with no space in between or there is a break in between but a highlighted gap that appears very out of place)
+
+06-06:
+Tiffany:
+-Worked on creating questions and answers for the tests
+
+Irene:
+-Added various pictures for stuymap
+-Modified stuymap.html to format pictures (make everything appear more visually appealing) cont. on 06-07
+
+06-07:
+Tiffany:
+-New bug/ attempted to fix bug in test2.py
+
+Irene:
+-Modified stuymap.html for floors 1 to 4 (each with photo and description using span)
+-Note: some image placement appear different depending on the browser zoom width 
+
+06-08:
+Tiffany:
+-Fixed bug in test1.py for errors in modifying string body
+
+Irene:
+-Continued adding pictures/ changing descriptions for Stuymap
+-Modified sizes of all images (because attempts for css on span for different sizes of images have failed)
+
+06-09:
+Tiffany:
+-Fixed bug in test2.py by changing erudite to multiple choice
+
+Irene:
+-Modified stuymap to become the mainpage (homepage and mainpage are no longer part of project)
+-Added various images/ css to make stuymap more visually appealing
+-Preparing for log out and changing stuymap (after taking aptitude test it shows blog and compatibility test in its place), most likely by chaning html to a py file (also to allow cookies)
+-Preparing a read me the first time someone enters stuymap (before clicking on any pills)
+
+06-10:
+Tiffany:
+-Created profile.py which shows basic user information (i.e. name, a changeable description)
+
+Irene:
+-Continued modifying stuymap (specifically log out and code to change appearance of stuymap)
+
+06-11:
+Irene:
+-Fixed various bugs in code (i.e. authentication error in test1.py solved by PATRICK CHAN, username = None, etc)
+
+06-12:
+Tiffany:
+-Fixed bugs in blog.py and profile.py (i.e. commenting system broke)
+
+Irene:
+-Merged code
+-Added questions to test1
+-Semi-fixed login bug (username of one character previously bypassed the aptitude test) 
+-Background images/ modifications of create account, log in, test1 (aptitude test) and test2 (compatibility test) to make everything more appealing/ user friendly
+-Created a readme file shown in the beginning of stuymap
+-Major css revisions 
+
+06-13:
+Irene:
+-Modified stuymap to relate with factions
+-More CSS edits
+-Created finalproject.html

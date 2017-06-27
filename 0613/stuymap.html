@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Stuy Map </title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="path/to/balloon.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+<script>
+      WebFont.load({
+      google: {
+      families: ["Lato:100,300,400,700,900","Karla:regular","Cookie:regular"]
+    }
+    });
+</script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+<style>
+  body {
+     background-color: #D08BE5;
+     background-image: url("pictures/toasty2.png");
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: top right;
+
+     margin:0;
+     padding:0;
+  }
+  h1 { 
+    color: Yellow;
+    text-align: left;
+    font-family: "Cookie";
+    font-size: 80px;
+  }
+  h2 {
+    color: #FFF763;
+    text-align: center;
+    font-family: "Verdana";
+    font-size: 35px;
+  }
+  h3 {
+    color: Blue;
+    text-align: center;
+    font-family: "Verdana";
+    font-size: 30px;
+  }
+  p  {
+    color: Purple;
+    text-align: left;
+    font-family: "Times New Roman";
+    font-size: 20px;
+  }
+  tr:hover {
+    background-color: #F5F5F5
+  }
+  td {
+    color: black;
+    text-align: center;
+    font-family: "Nyala";
+    font-size: 20px;
+  }
+  table.center {
+    margin-left:auto;
+    margin-right:auto;
+  }
+  img.displayed {
+    display: blcok;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .resize {
+    width: 400px;
+    height: 200px;
+  }
+  .resizelarge {
+    width: 300px;
+    height: 200px;
+  }
+  .resizelarger {
+    width: 700px;
+    height: auto;
+    vertical-align:bottom;
+  }
+  p.groove {
+    border-color: purple;
+    
+    border-style: groove;
+    border-width: 10px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  ul.img-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  ul.img-list li {
+    display: inline-block;
+    height: 200px;
+    margin: 0 1em 1em 0;
+    position: relative;
+    width: 400px;
+  }
+  span.text-content {
+    background: rgba(0,0,0,0.5);
+    color: pink;
+    cursor: pointer;
+    display: table;
+    height: 200px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 400px;
+    opacity: 0;
+  }
+  span.text-contentresize {
+    background: rgba(0,0,0,0.5);
+    color: white;
+    cursor: pointer;
+    display: table;
+    height: 200px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 400px;
+    opacity: 0;
+  }
+  span.text-contentresize span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+
+  ul.img-list li:hover span.text-content {
+    opacity: 1;
+  }  
+
+  span.text-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+
+</style>
+</head>
+<body>
+ <div class="container">
+	<p style="text-align:right"> <a href="test1.py">Take The Aptitude Test</a>
+	<b>|</b>
+	<a href="logOut.html">Log Out</a></p>
+
+  <h1> Welcome to the <i> Divergentized </i> Stuyvesant </h1>
+  <ul class="list-inline nav nav-pills">
+    <li> <a data-toggle="pill" href="#first">First </a></li>
+    <li> <a data-toggle="pill" href="#second">Second </a></li>
+    <li> <a data-toggle="pill" href="#third">Third </a></li>
+    <li> <a data-toggle="pill" href="#fourth">Fourth </a></li>
+    <li> <a data-toggle="pill" href="#fifth">Fifth </a></li>
+    <li> <a data-toggle="pill" href="#sixth">Sixth </a></li>
+    <li> <a data-toggle="pill" href="#seventh">Seventh </a></li>
+    <li> <a data-toggle="pill" href="#eigth">Eigth </a></li>
+    <li> <a data-toggle="pill" href="#ninth">Ninth </a></li>
+    <li> <a data-toggle="pill" href="#tenth">Tenth </a></li>
+    <li> <a data-toggle="pill" href="#eleventh">Eleventh </a></li>
+  </ul>
+  <div class="tab-content">
+   <div id="zero" class="tab-pane fade in active">
+	<br>
+	<br>
+    <h1><center>Read Me</center></h1>
+	<br>
+   </div>
+
+   <div id="first" class="tab-pane fade">
+   <h2>First Floor</h2>
+	<br>
+   <ul class="img-list">
+        <li> <img class="resize" src="pictures/auditorium.jpg"/>
+                <span class="text-content"><span>Auditorium</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/pool.jpg"/>
+             <span class="text-content"><span>Swimming pool </span></span>
+        </li>
+   </div>
+
+   <div id="second" class="tab-pane fade">
+   <h2>Second Floor</h2>
+	<br>
+   <ul class="img-list">
+	<li> <img class="resize" src="pictures/bridge.jpg"/>
+        	<span class="text-content"><span>Bridge Entrance</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/counselors.jpg"/>
+             <span class="text-content"><span>Guidance Counselor</span></span>
+	</li>
+	<br>
+	<li> <img class="resize" src="pictures/store.jpg"/>
+             <span class="text-content"><span>School Store</span></span>
+        </li>
+
+   </div>
+  
+   <div id="third" class="tab-pane fade">
+    <h2>Third Floor</h2>
+        <br>
+   <ul class="img-list">
+        <li> <img class="resize" src="pictures/apush.gif"/>
+                <span class="text-content"><span>US History</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/china.jpg"/>
+             <span class="text-content"><span>China</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/european.jpg"/>
+             <span class="text-content"><span>European History</span></span>
+        </li>
+		<br>
+
+	<li> <img class="resize" src="pictures/geopolitics.jpg"/>
+                <span class="text-content"><span>GeoPolitics</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/history.png"/>
+             <span class="text-content"><span> HISTORY </span></span>
+        </li>
+        <li> <img class="resize" src="pictures/humangeo.jpg"/>
+             <span class="text-content"><span>Human Geography</span></span>
+        </li>
+                <br>
+
+	<li> <img class="resize" src="pictures/jewish.jpg"/>
+                <span class="text-content"><span>Jewish History</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/world.jpg"/>
+             <span class="text-content"><span>World History</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/cry.gif"/>
+             <span class="text-content"><span> Computer Science</span></span>
+        </li>
+                <br>
+	
+   </div>
+  
+   <div id="fourth" class="tab-pane fade">
+    <h2>Fourth Floor</h2>
+
+   <ul class="img-list">
+        <li> <img class="resize" src="pictures/algebra.jpg"/>
+                <span class="text-content"><span>Algebra</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/geometry.jpg"/>
+             <span class="text-content"><span>Geometry</span></span>
+        </li>
+        
+		<h3>MATH</h3>
+	<br><br>
+        <li> <img class="resize" src="pictures/trigonometry.jpg"/>
+             <span class="text-content"><span>Trigonometry</span></span>
+        </li>
+	<li> <img class="resize" src="pictures/calculus.jpg"/>
+             <span class="text-content"><span>Calculus</span></span>
+        </li>
+
+   </div>
+  
+   <div id="fifth" class="tab-pane fade">
+    <h2>Fifth Floor</h2>
+	<ul class="img-list">
+        <li> <img class="resize" src="pictures/cafeteria.jpg"/>
+                <span class="text-content"><span>Cafeteria</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/gym.jpg"/>
+             <span class="text-content"><span>Gym</span></span>
+        </li>
+
+
+   </div>
+  
+   <div id="sixth" class="tab-pane fade">
+    <h2>Sixth Floor</h2>
+	<ul class="img-list">
+        <li> <img class="resize" src="pictures/library.jpg"/>
+                <span class="text-content"><span>Library</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/engDept.jpg"/>
+             <span class="text-content"><span>AP English</span></span>
+        </li>
+
+   </div>
+  
+   <div id="seventh" class="tab-pane fade">
+    <h2>Seventh Floor</h2>
+	<ul class="img-list">
+        <li> <img class="resize" src="pictures/bio.jpg"/>
+                <span class="text-content"><span>Biology</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/biolab.jpg"/>
+             <span class="text-content"><span>Biology Lab</span></span>
+        </li>
+
+   </div>
+  
+   <div id="eigth" class="tab-pane fade">
+    <h2>Eigth Floor</h2>
+        <ul class="img-list">
+        <li> <img class="resize" src="pictures/gas-laws.gif"/>
+                <span class="text-content"><span>Physics</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/physicsLab.jpg"/>
+             <span class="text-content"><span>Physics Lab</span></span>
+        </li>
+
+   </div>
+  
+   <div id="ninth" class="tab-pane fade">
+    <h2>Ninth Floor</h2>
+        <ul class="img-list">
+        <li> <img class="resize" src="pictures/atom.gif"/>
+                <span class="text-content"><span>Chemistry</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/chemLab.jpg"/>
+             <span class="text-content"><span>Chemistry Lab</span></span>
+        </li>
+
+   </div>
+  
+   <div id="tenth" class="tab-pane fade">
+    <h2>Tenth Floor</h2>
+        <ul class="img-list">
+        <li> <img class="resize" src="pictures/art.jpg"/>
+                <span class="text-content"><span>Art</span></span>
+        </li>
+        <li> <img class="resize" src="pictures/art2.jpg"/>
+             <span class="text-content"><span>Appreciation</span></span>
+        </li>
+
+   </div>
+  
+   <div id="eleventh" class="tab-pane fade">
+    <h2>Eleventh Floor</h2>
+	<center><img class="resizelarger" src="pictures/waterPark2.jpg"/></center>
+        <h3>Swimming Pool</h3>
+        
+
+   </div>
+ </div>
+</body>
+</html>
+
