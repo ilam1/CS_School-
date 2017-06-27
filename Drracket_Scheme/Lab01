@@ -1,0 +1,19 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Lab01) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+(define myMax (lambda (a b) (/ (+ (abs (- a b)) a b)2)))
+(myMax 2 3)
+(myMax 22 45)
+
+(define max3 
+  (lambda (a b c)
+    (myMax (myMax a b) c)
+    ))
+(max3 5 20 15)
+(max3 42 6 12)
+
+(define max4 
+  (lambda (a b c d) 
+    (myMax d (max3 a b c))))
+(max4 2 4 5 6)
+(max4 9 10 3 4)

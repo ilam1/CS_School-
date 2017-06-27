@@ -1,0 +1,41 @@
+;(cons ELEMENT LIST)
+(cons 4 3)
+(cons 2 '((1 2 3)))
+;(cons LIST1 LIST2)
+(cons '(1 2 3) '(3 2))
+(cons '( 1 2 x) '(d))
+
+"list"
+;(list ELEMENT LIST)
+(list 4 3)
+(list 2 '((1 2 3)))
+;(list LIST1 LIST2)
+(list '(1 2 3) '(3 2))
+(list '( 1 2 x) '(d))
+
+(define L '((1) 2 3 (2 3)))
+(cons (car L) (cdr L))
+
+(cons 4 (cons 5 '()))
+(list 4 5)
+
+"makeList"
+(define makeList (lambda (n)
+                   (cond
+                     ((= n 0) (list 0))
+                     ((cons n (makeList ( - n 1)))))))
+(makeList 2)
+(makeList 10)
+
+"makeSquares"
+(define makeSquares (lambda (n)
+                      (cond
+                        ((= n 1) (list 1))
+                        ((cons (* n n) (makeSquares (- n 1)))))))
+(makeSquares 5)
+(makeSquares 13)
+
+"makeIncreasingList"
+(define makelistAtoB (lambda (a b)
+                       (cons 1 (makelistAtoB ( (+ 1 a) b)))))
+(makelistAtob 3 6)

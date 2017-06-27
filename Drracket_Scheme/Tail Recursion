@@ -1,0 +1,8 @@
+(define sumHelp (lambda (L ans)
+                  (cond
+                    ((null? L) ans)
+                    (else (sumHelp (cdr L)(+ (car L) ans))))))
+(define sumListTail (lambda (L)
+                      (sumHelp L 0)))
+(sumListTail '(1 2))
+(sumListTail '(8 2 4 6))

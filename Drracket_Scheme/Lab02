@@ -1,0 +1,17 @@
+(define discriminant (lambda (a b c) (- (* b b) (* 4 a c))))
+(define posRoot (lambda (a b c) (/ (+ (* -1 b) (sqrt (discriminant a b c))) (* 2 a)))) 
+(define negRoot (lambda (a b c) (/ (- (* -1 b) (sqrt (discriminant a b c))) (* 2 a))))
+(discriminant 1 2 3)
+(posRoot 1 2 3)
+(negRoot 1 2 3)
+(posRoot 1 6 9)
+(negRoot 1 6 9)
+(posRoot 1 1 -6)
+(negRoot 1 1 -6)
+
+(define findroot (lambda (a b c plusminus) (/ (plusminus (* -1 b) (sqrt (discriminant a b c))) (* 2 a))))
+(findroot 1 2 3 +)
+(findroot 1 2 3 -)
+(findroot 1 6 9 +)
+(findroot 1 6 9 -)
+

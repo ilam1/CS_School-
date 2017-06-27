@@ -1,0 +1,111 @@
+#Lam,Irene
+#Intro2,pd4
+#PyLab01
+#2016-03-01
+
+#3.1
+def triangleArea(base,height):
+    return base*height*0.5
+#print triangleArea(5,10) -> 25.0
+#print triangleArea(1.5,2) -> 1.5
+#print triangleArea(1,1) -> 0.5
+#print triangleArea(1.0,1) -> 0.5
+#print triangleArea(6,1) -> 3.0
+
+#3.2
+def distance(x1,y1,x2,y2):
+    return ((x2-x1)**2 + (y2-y1)**2)**0.5
+#print distance(0,0,3,4) -> 5.0
+x=distance(1,-2,10,38) 
+#print x -> 41.0
+#print distance(2,5,3,26) -> 21.0237960416
+#print distance(3,3,6,0) -> 4.24264068712
+#print distance(0,0,7,0) -> 7.0
+
+#3.3
+def disc(a,b,c):
+    return b**2 - 4*a*c
+#print disc(2,3,4) -> -23
+#print disc(1,2,1) -> 0
+#print disc(1,4,8) -> -16
+#print disc(3,6,2) -> 12
+#print disc(1,1,3) -> -11
+
+#3.4
+def gradePicker(score):
+    if score >= 90:
+      return "A"
+    elif score >= 80:
+      return "B"
+    elif score >=70:
+      return "C"
+    elif score >= 65:
+      return "D"
+    else:
+      return "F"
+#print gradePicker(5) -> F
+#print gradePicker(92) -> A
+#print gradePicker(65) -> D
+#print gradePicker(64) -> F
+#print gradePicker(70) -> C
+
+#3.5
+def closestPoints(ax,ay,bx,by,cx,cy):
+    if distance(ax,ay,bx,by) <= distance(bx,by,cx,cy):
+      if distance(ax,ay,bx,by) <= distance(ax,ay,cx,cy):
+        return 1
+      else:
+        return 2
+    elif distance(ax,ay,bx,by) <= distance(ax,ay,cx,cy):
+      if distance(ax,ay,bx,by) > distance(bx,by,cx,cy):
+        return 3
+      else:
+        return 1
+    elif distance(ax,ay,cx,cy) <= distance(bx,by,cx,cy):
+      return 2
+    else:
+      return 3
+#print closestPoints(0,0,1,1,5,5) -> 1
+#print closestPoints(0,0,1,1,0.1,0.1) -> 2
+#print closestPoints(-1,0,0,1,1,0) -> 1
+#print closestPoints(0,10,1,0,-1,0) -> 3
+#print closestPoints(0,0,0,3,4,0) -> 1
+#print closestPoints(1,9,5,3,2,4) -> 3
+
+#3.6
+def numRoots(a,b,c):
+    if disc(a,b,c) > 0:
+      return 2
+    elif disc(a,b,c)==0:
+      return 1
+    else:
+      return 0
+#print numRoots(1,0,-4) -> 2
+#print numRoots(1,4,4) -> 1
+#print numRoots(2,2,5) -> 0
+
+#3.7
+def quadsolvePlus(a,b,c):
+    if numRoots(a,b,c)== 0:
+      return "NoRealRoots"
+    else:
+      return (-b + disc(a,b,c)** 0.5)/( 2*a)
+#print quadsolvePlus(1,0,-4) -> 2.0
+#print quadsolvePlus(1,4,4) -> -2.0
+#print quadsolvePlus(2,2,5) -> "NoRealRoots"
+#print quadsolvePlus(1,-2,1) -> 1.0
+
+#3.8
+def quadsolve(a,b,c,sign):
+    if numRoots(a,b,c) == 0:
+      return "NoRealRoots"
+    else:
+      if sign > 0:
+        return quadsolvePlus(a,b,c)
+      else:
+        return (-b - disc(a,b,c) **0.5)/(2*a)
+#print quadsolve(1,0,-4,3) -> 2.0
+#print quadsolve(5,-8,1, 1) -> 1.46332495807
+#print quadsolve(5,-8,1,-4) -> 0.136675041929
+#print quadsolve(1,-1,-6,1) -> 3.0
+#print quadsolve(1,-1,-6,-1) -> -2.0

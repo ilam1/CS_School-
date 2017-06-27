@@ -1,0 +1,24 @@
+Lam, Irene
+Intro2, pd4
+StringResearch
+2016-03-08
+
+str.isalpha(): Returns a boolean. True is returned if the string contains only alphabetical characters. False is returned otherwise. (ex: if the string contains punctuation marks).
+"hello".isalpha() returns True
+"hello!".isalpha() returns False
+"Hello".isalpha() returns True
+"/hello".isalpha() returns False
+
+str.isspace(): Returns a boolean. If the string contains only spaces, and at least one space is present, the method returns True. False is returned otherwise.
+"   ".isspace() returns True
+"hello".isspace() returns False
+"he llo".isspace() returns False
+"h   ".isspace() returns False
+"".isspace() returns False
+
+str.replace(old, new[, count]): If str.replace(old, new) is used, the string is returned with all instances of substring old replaced by substring new (where old and new are replaceable words). If the argument count is included (shown as str.replace(old, new[, count])), the first count instances of the substring old is replaced by the substring new.
+"This is a sentence".replace("a", "an amazing") returns 'This is an amazing sentence'
+
+
+str.find(sub[,start[,end]])
+str.strip([chars])

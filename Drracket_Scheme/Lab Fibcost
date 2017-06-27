@@ -1,0 +1,22 @@
+(define fibcost (lambda (n)
+                  (cond
+                    ((= n 0) 0.01)
+                    ((= n 1) 0.02)
+                    ((+ 3.02 (fibcost (- n 1)) (fibcost (- n 2)))))))
+(fibcost 1)
+(fibcost 2)
+(fibcost 3)
+(fibcost 4)
+(fibcost 5)
+(fibcost 6)
+(fibcost 17)
+;Largest fib you can afford with $10,000 is 17. Leftover is $2157.53
+
+
+(define largestfibIcanBuywith (lambda (D)
+                (cond
+                  ((= n 0.01) 0)
+                  ((= n 0.02) 1)
+                  ((<= D (fibcost guess)) guess)
+                  ((> D (fibcost guess)) (/ (+ n guess) 2)))))
+(largestfibIcanBuywith 10000)

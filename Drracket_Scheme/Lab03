@@ -1,0 +1,21 @@
+(define isBetween (lambda (a b n) 
+                    (or 
+                     (and (< n b) (> n a)) 
+                     (and (< n a) (> n b)))))
+(isBetween 1 2 3)
+(isBetween 2 3 2)
+(isBetween 1 4 2)
+"XOR"
+(define xor (lambda (a b)
+              (or
+               (and a (not b))
+               (and (not a) b))))
+
+(define xor (lambda (a b)
+              (and 
+               (or a b)
+               (not (and a b)))))
+(xor #true #true)
+(xor #true #false)
+(xor #false #true)
+(xor #false #false)

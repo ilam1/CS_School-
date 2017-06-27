@@ -1,0 +1,73 @@
+value = '''a,e,z,d
+1,2,3,4
+5,0,9,4
+0,11,9,0
+5,3,2,1
+9,9,9,9
+'''
+operations = '''a + e
+z - a
+d * a
+e / z
+e * d
+'''
+
+#operationLine = read(operation.txt).split('\n')
+#valueLine = read(values.txt).split('\n')
+#header = valueLine[0].split(',')    
+
+def empty(L):
+  ans=[]
+  while len(L) > 0:
+    if len(L[0]) != 0:
+      ans += L[0]
+    L = L[1:]
+  return ans
+print empty([1,2,3,4,"ab", ""])
+
+def hw(operationLine,valueLine):
+  ans=""
+  operationLine=empty(operationLine)
+  valueLine=empty(valueLine)
+  header = valueLine[0].split(',')
+  for index in range(len(operationLine)):
+    line = operationLine[index].split(' ')
+    print operationLine
+    print line
+    for char in range(len(header)):
+        if line[0] == header[char]:
+            first = char                      
+        if line[2] == header[char]:
+            sec = char                      
+    nums = valueLine[index + 1].split(',')
+    if line[1] == '*':
+        ans += nums[first] * num[sec]
+    if line[1] == '-':
+        ans += nums[first] - num[sec]
+    if line[1] == '+':
+        ans += nums[first] + num[sec]
+    if line[1] == '/':
+        ans += nums[first] / num[sec]
+    ans += "\n"
+  return ans 
+#print hw(value.split("\n"), operations.split("\n"))
+
+#x=values.txt
+#y=operations.txt
+#def helper(x,y):
+#  a=''
+#  while len(y) > 0:
+#    if y[0] != "+" and y[0] != "-" and y[0] != "*" and y[0] != "/":
+#      a += y[0]
+#    y=y[1:]
+#  a=a.split("")
+#  a=a.split(" ")
+#  return a
+#print helper(value, operations)
+  
+
+#def operation(x,y):
+#  a=[]
+#  for element in y:
+#    if y[0] == '+':
+#      a +=  

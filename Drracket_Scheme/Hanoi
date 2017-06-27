@@ -1,0 +1,23 @@
+(display "2\n")
+
+(begin 
+  (display "A")
+  (display " to B\n"))
+
+(define hanoi (lambda (start temporary destination N)
+                (cond
+                  ((= N 1) (display start)
+                           (display " to ")
+                           (display destination)
+                           (newline))
+                  (else (begin
+                          (hanoi start destination temporary (- N 1))
+                          (hanoi start temporary destination 1)
+                          (hanoi temporary start destination (- N 1)) 
+                                    )))))
+"1"
+(hanoi "A" "B" "C" 1)
+"2"
+(hanoi "A" "B" "C" 2)
+"3"
+(hanoi "A" "B" "C" 3)

@@ -1,0 +1,35 @@
+(define numDigits (lambda (n) 
+                    (cond
+                      (( < n 0) (numDigits (- n)))
+                      ((< n 10) 1)
+                      ((+ 1 (numDigits (quotient n 10)))))))
+(numDigits 2334)
+(numDigits -23)
+(numDigits 21)
+
+;Lab Recursion1
+;(sumDigits n) - add the value of each of the digits of the integer
+(define sumDigits (lambda (n) (cond
+                                ((< n 0) (sumDigits (- n)))
+                                ((< n 10) n)
+                                ((+ (remainder n 10) (sumDigits (quotient n 10)))))))
+(sumDigits 245)
+(sumDigits 12)
+(sumDigits -12)
+;(countEvenDigits n) - how many of the digits of the number are even?
+(define countEvenDigits (lambda (n) 
+                          (cond
+                            ((< n 0) (countEvenDigits (quotient (- n) 10)))
+                            ((and (< n 10) (= (remainder n 2) 1)) 0)
+                            ((< n 10) 1)
+                            (else (+ 
+                                   (countEvenDigits (quotient n 10))
+                                   (countEvenDigits (remainder n 10)))))))
+                            ;((= (remainder n 2) 0) 
+                             ;(+ 1 (countEvenDigits (quotient n 10))))
+                            ;(else (countEvenDigits (quotient n 10))))))
+(countEvenDigits 21)
+(countEvenDigits 212)
+(countEvenDigits 44)
+(countEvenDigits 2232)
+(countEvenDigits -21)

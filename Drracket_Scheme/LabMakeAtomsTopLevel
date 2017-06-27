@@ -1,0 +1,38 @@
+;LabMakeAtomsTopLevel
+;1.(hasSublists? L)
+(define hasSublists? (lambda (L)
+                       (cond
+                         ((null? L) #f)
+                         ((list? (car L))#t)
+                         (else (hasSublists? (cdr L)))))) 
+(hasSublists? '( 2 3 4))
+(hasSublists? '( 2 (3) 4))
+(hasSublists? '( ))
+(hasSublists? '( () ))
+;2.(countEmpty L)
+(define denest (lambda (L)
+                 (cond
+                   ((null? L)0)
+                   ((list? (car L)) (denest (car L)))
+                   (else L))))
+(define countEmpty (lambda (L)
+                     (cond
+                       ((null? L) 0)
+                       ((null? (car L)) (+ 1 (countEmpty (cdr L))))
+                       ((list? (car L)) (+ (countEmpty (car L)) (countEmpty (cdr L))))
+                       (else (countEmpty (cdr L))))))
+(countEmpty '( 3 2  ( ) ( ) ))
+(countEmpty '( 2 (9 ( ) ( ) ) ( ) ) )
+(countEmpty '() ) 
+;3.(makeAllAtomsTopLevel L) 
+(define makeAllAtomsTopLevel (lambda (L)
+                               (cond
+                                 ((null? L) '())
+                                 ((list? (car L)) 
+                                  (append (makeAllAtomsTopLevel(car L)) (makeAllAtomsTopLevel(cdr L))))
+                                 (else (append (list (car L)) (makeAllAtomsTopLevel (cdr L)))))))
+(makeAllAtomsTopLevel '( 1 2 3) )  
+(makeAllAtomsTopLevel '( 1 ( ) ( 2 3 ) ) )  
+(makeAllAtomsTopLevel '( 1 ( 2 ( 3) ) ) ) 
+(makeAllAtomsTopLevel '( (1 2( 9 2 ( (5) 3) ) ) ) )  
+

@@ -1,0 +1,32 @@
+#x=values.txt
+#y=operations.txt
+def helper(x,y):
+  a=''
+  while len(y) > 0:
+    if y[0] != "+" and y[0] != "-" and y[0] != "*" and y[0] != "/":
+      a += y[0]
+    y=y[1:]
+  a=a.split()
+  
+  return a
+value = '''a,e,z,d
+1,2,3,4
+5,0,9,4
+0,11,9,0
+5,3,2,1
+9,9,9,9
+'''
+operations = '''a + e
+z - a
+d * a
+e / z
+e * d
+'''
+print helper(value, operations)
+  
+
+#def operation(x,y):
+#  a=[]
+#  for element in y:
+#    if y[0] == '+':
+#      a +=  

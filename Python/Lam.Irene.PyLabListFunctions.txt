@@ -1,0 +1,116 @@
+#1 removeValuesFromXtoYList (where L is listOfNumbers, x is min, and y is max)
+def removeValuesFromXtoYList(L,x,y):
+    index = len(L)
+    a = 0
+    while index > 0:
+        if x < L[a] and L[a] < y:
+            L.remove(L[a])
+            index -= 1
+        else:
+            index -= 1
+            a += 1
+
+L=[1,2,3,4,5,2]
+removeValuesFromXtoYList(L,0,1)
+#print L
+L=[ 1, 3, -5, 10, -2, 0, -6.0, 0 , 1]
+removeValuesFromXtoYList(L,-3,3)
+#print L
+L=[ 1, 3, -5, 10, -2, 0, 2, 2, 3, -6.0]
+removeValuesFromXtoYList(L,0,10)    
+#print L    
+
+#2 moveNegativeToEnd (where L is listOfNumbers)
+def moveNegativeToEnd(L):
+    index = len(L)
+    a = 0
+    while index > 0:
+        if L[a] < 0:
+            L.append(L.pop(a))
+            index -= 1
+        else:
+            index -= 1
+            a += 1
+x=[ 1, 3, -5, 10, -2, 0, -6.0]
+moveNegativeToEnd(x)  
+#print x
+
+y=[0, 1 , -3, 4.5]
+moveNegativeToEnd(y) 
+#print y
+
+#3 reverseWordsWithCapitals (where L is listOfStrings)
+def reverse(string):
+#    return string[::-1]
+    x=""
+    while len(string) > 0:
+        x += string[-1]
+        string=string[:len(string)-1]
+    return x
+#print reverse("abcde")
+
+def reverseWordsWithCapitals(L):
+    x = len(L)
+    while x > 0:
+        if L[0] != L[0].lower():
+            L.append(str(reverse(L[0])))
+       #    x -= 1
+        else:
+            L.append(L[0])
+        x -= 1
+        del L[0]
+a = ['fish','Hey!','oOps','this is Sparta!']
+reverseWordsWithCapitals( a ) 
+#print a
+
+#4 matching (where x is listA and y is listB)
+def matching(x,y):
+    a = 0
+    if len(x) <= len(y):
+        while len(x) > 0:
+            if x[0] == y[0]:
+                a += 1
+                x=x[1:]
+                y=y[1:]
+            else:
+                x=x[1:]
+                y=y[1:]
+    else:
+        while len(y) > 0:
+            if x[0] == y[0]:
+                a += 1
+                x=x[1:]
+                y=y[1:]
+            else:
+                x=x[1:]
+                y=y[1:]
+    return a
+#print matching([1,2,3],[2,3,4])
+#print matching([1,2,3],[2,2,3])
+#print matching([4,1,9,2,3],[2,1,9,2,3,3,3,3])        
+
+#5 stringToList (where x is string)
+def stringToList(x):
+    a = []
+    while len(x) > 0:
+        a.append(x[0])
+        x=x[1:]
+    return a
+#print stringToList("bob")
+#print stringToList("Hoooot")
+
+#6 noDupeMatch (where x is listA and y is listB)
+def noDupeMatch(x,y):
+    a = 0
+    while len(x) > 0:
+      if y.count(x[0]) > 0:
+	while y.count(x[0]) > 0:
+          y.remove(x[0])
+        a += 1
+      x=x[1:]
+    return a
+#print noDupeMatch( [1,2,3] , [1,3,5] )
+#print noDupeMatch( [3,3,3] , [3,3,3,3,3] )
+#print noDupeMatch( [1,2,3,4] , [4,3,3,3,4,5,4] )
+#print noDupeMatch( [5,6,2,8] , [8,6,5,4,2,5,8] )	 
+      

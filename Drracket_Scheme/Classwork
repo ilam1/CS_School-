@@ -1,0 +1,39 @@
+;October 6, 2015
+(define gradeConvert (lambda (g)
+                       (cond
+                         ( (and (>= g 90) (<= g 100)) "Q" )
+                         ( (>= g 80) "M" )
+                         ( (>= g 70) "X" )
+                         (else "Z"))))
+(gradeConvert 23)
+(gradeConvert 99)
+(gradeConvert 79)
+(gradeConvert 88)
+;October 7, 2015
+(define pythCheck (lambda (a b c)
+                    ( = (* c c) (+ (* a a) (* b b)))))
+(pythCheck 3 4 5)
+(pythCheck 5 4 3)
+(pythCheck 3 4 6)
+
+(define isRight (lambda (a b c)
+                  (or (pythCheck b c a)
+                      (pythCheck a b c)
+                      (pythCheck c a b))))
+(isRight 3 4 5)
+(isRight 4 5 3)
+(isRight 5 12 13)
+(isRight 2 4 6)
+
+;October 19, 2015
+(define fib (lambda (n)
+              (cond
+                ((= n 0) 0)
+                ((= n 1) 1)
+                ((> n 1) (+ (fib (- n 1)) (fib (- n 2)))))))
+(fib 2)
+(fib 3)
+(fib 5)
+(fib 6)
+(fib 38 )
+

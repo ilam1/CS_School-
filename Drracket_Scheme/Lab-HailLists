@@ -1,0 +1,17 @@
+(define nextHail (lambda (n)
+                   (cond
+                     ((= n 1) 1)
+                     ((even? n) (/ n 2))
+                     ((odd? n) (+ (* 3 n) 1)))))
+(define makeHail (lambda (n) 
+                   (cond
+                     ((= n 1) (list 1))
+                     (else(cons n (makeHail (nextHail n)))))))
+(makeHail 8)
+(makeHail 1)
+(makeHail 3)
+
+(define revHelp (lambda (L ans)
+                  (if (null? ) ans (revHelp (cdr L) (cons (car L) ans)))))
+(define reverseL (lambda (L)
+		(reverseHelp L '())))

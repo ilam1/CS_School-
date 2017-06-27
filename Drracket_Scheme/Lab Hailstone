@@ -1,0 +1,35 @@
+(define sumAtoB (lambda (a b)
+                  (cond
+                    ((= a b) a)
+                    ((> a b) (sumAtoB b a))
+                    ((+ a (sumAtoB (+ a 1) b))))))
+(sumAtoB 7 5)
+
+;Lab- Hailstone
+"nextHail"
+(define nextHail (lambda (n)
+                   (cond
+                     ((= n 1) 1)
+                     ((even? n) (/ n 2))
+                     ((odd? n) (+ (* 3 n) 1)))))
+(nextHail 3)
+
+"hailLen"
+(define hailLen (lambda (n)
+                  (cond
+                    ((= n 1) 1)
+                    ((+ 1 (hailLen (nextHail n)))))))
+(hailLen 1)
+(hailLen 2)
+(hailLen 3)
+(hailLen 5)
+(hailLen 6)
+"maxHail"
+(define maxHail (lambda (n)
+                  (cond
+                  ((= n 1) 1)
+                  ((max n (maxHail (nextHail n)))))))
+(maxHail 3) 
+(maxHail 4)
+(maxHail 5) 
+(maxHail 7)

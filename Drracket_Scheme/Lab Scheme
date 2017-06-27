@@ -1,0 +1,46 @@
+(define primehelp (lambda (n factor)
+                    (cond
+                      ((= n 1) #f)
+                      ((> factor (sqrt n)) #t)
+                      ((and (<= factor (sqrt n)) (integer? (/ n factor))) #f)
+                      (else (primehelp n (+ factor 1))))))
+(define checkPrime (lambda (n)
+                     (primehelp n 2)))
+(checkPrime 2)
+(checkPrime 5)
+(checkPrime 8)
+(checkPrime 1)
+
+"positionOf"
+(define positionOf (lambda (a b)
+                     (cond
+                       ((null? b) 0)
+                       ((equal? (car b) a) (+ 1 (positionOf a (cdr b))))
+                       (else (positionOf a (cdr b))))))
+(positionOf 'a '(a b c)) ; -> 1
+(positionOf 'b '(a b c b)) ; -> 2 (remember: first occurrence)
+(positionOf 'c '(a b d)) ; -> 0
+
+"lastPositionOf"
+(define lastPositionOfH (lambda (a b c d)
+                         (cond
+                           ((null? b) c)
+                           ((equal? (car b) a) (lastPositionOfH a (cdr b) d (+ d 1 )))
+                           (else (lastPositionOfH a (cdr b) c (+ 1 d))))))
+
+(define lastPositionOf
+  (lambda (a b)
+    (lastPositionOfH a b 0 1 )))
+
+(lastPositionOf 'a '(a b a)) ; -> 3
+(lastPositionOf 'a '(b c d)) ; -> 0
+(lastPositionOf 'a '(a a a c d a f))
+
+"NextPrime"
+(define NextPrime (lambda (a)
+                    (cond
+                      ((checkPrime a) a)
+                      (else (NextPrime (+ a 1))))))
+(NextPrime 7) ; -> 7
+(NextPrime 8) ; -> 11
+(NextPrime 48) ; -> 53

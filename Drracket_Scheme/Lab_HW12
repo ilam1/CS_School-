@@ -1,0 +1,40 @@
+;Lam, Irene
+;4351
+;MKS21 Period4
+;2015-10-23
+;Lab/HW12
+"sumOfEvenPositive"
+(define sumOfEvenPositive (lambda (L)
+                            (cond
+                              ((null? L) 0)
+                              ((and (even? (car L)) (> (car L) 0)) 
+                               (+ (car L) (sumOfEvenPositive (cdr L))))
+                              (else (+ 0 (sumOfEvenPositive (cdr L)))))))
+(sumOfEvenPositive '(2 3 4))
+(sumOfEvenPositive '(-100 12 3))
+(sumOfEvenPositive '(98 -48 63 57 4))
+
+"maxValue"
+(define maxValue (lambda (L) 
+                   (cond
+                     ((null? (cdr L)) (car L))
+                     ((max (car L) (maxValue (cdr L)))))))
+(maxValue '(-3 -33))
+(maxValue '( 4 53 -43))
+
+"maxValueSub"
+(define maxValueSub (lambda (L)
+                      (cond 
+                        ((list? (car L)) (maxValueSub (car L)))
+                        ((null? (cdr L)) (car L))
+                        (else (max (car L) (maxValueSub (cdr L)))))))
+(maxValueSub '(1 (2 3)))
+"countSubs"
+(define countSubs (lambda (L)
+                    (cond
+                      ((list? (car L)) (+ 1 (countSubs (cdr L))))
+                      ((null? (cdr L)) 0)
+                      (else (countSubs (cdr L))))))
+(countSubs '(2 3 (2 3)))
+(countSubs '(2 3))
+

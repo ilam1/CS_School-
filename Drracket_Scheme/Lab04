@@ -1,0 +1,14 @@
+(define to24hourtime (lambda (hour ampm)
+                       (cond 
+                         ( ( and (= hour 12) (= ampm 0)) 0)
+                         ( ( and (= hour 12) (= ampm 1)) 12)
+                         ( (= ampm 0) hour)
+                         ( (= ampm 1) (+ 12 hour)))))
+(to24hourtime 12 0)
+(to24hourtime 12 1)
+(to24hourtime 1 0)
+(to24hourtime 1 1)
+(to24hourtime 5 1)
+
+;(define to24hourtime (lambda (hour ampm)
+                       

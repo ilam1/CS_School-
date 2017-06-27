@@ -1,0 +1,13 @@
+(define countPrimeDigits (lambda (n) 
+                           (cond
+                             ((and (< n 10) 
+                                   (or (= n 2)(= n 3)(= n 5)(= n 7)) 1))
+                             ((< n 10) 0)
+                             (else(+  
+                                   (countPrimeDigits (quotient n 10))
+                                   (countPrimeDigits (remainder n 10)))))))
+(countPrimeDigits 23)
+(countPrimeDigits 3123)
+(countPrimeDigits 9)
+(countPrimeDigits 829)
+(countPrimeDigits 10)

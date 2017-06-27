@@ -1,0 +1,40 @@
+"or35"
+(define or35 (lambda (n) (or
+                          (= (remainder n 3) 0)
+                          (= (remainder n 5) 0))))
+(or35 3)
+(or35 10)
+(or35 8)
+"old35"
+(define old35 (lambda (n) (and 
+                           (or35 n)
+                           (not (and
+                                 (= (remainder n 3) 0)
+                                 (= (remainder n 5) 0))))))
+(old35 3)
+(old35 10)
+(old35 15)
+"more20"
+(define more20 (lambda (n) (or
+                            (= (remainder n 20) 1)
+                            (= (remainder n 20) 2))))
+(more20 20)
+(more20 21)
+(more20 22)
+                          
+"less20"
+(define less20 (lambda (n) (or
+                            (= (remainder n 20) 19)
+                            (= (remainder n 20) 18))))
+(less20 18)
+(less20 19)
+(less20 20)
+(less20 21)
+"nearTen"
+(define nearTen (lambda (n) (or 
+                             (<= (remainder n 10) 2)
+                             (>= (remainder n 10) 8))))
+(nearTen 12)
+(nearTen 17)
+(nearTen 19)
+                               

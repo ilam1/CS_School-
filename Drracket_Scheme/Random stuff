@@ -1,0 +1,27 @@
+(define getNth (lambda (L n)
+                 (cond
+                   ((= n 0) (car L))
+                   (else(getNth (cdr L) (- n 1))))))
+(getNth '(5 9 10 4 3) 0) ;returns 5
+(getNth '(5 9 10 4 3) 1) ;returns 9
+(getNth '(5 9 10 4 3) 2) ;returns 10
+"random x"
+;x(define x +)
+;x(define x '(2 3))
+(define z 1)
+(random z)
+(define y 2)
+(random y)
+(define b 3)
+(random b)
+(define c 4)
+(random c)
+(define x 5)
+(random x)
+(define d 6)
+(random d)
+"getRandomElement"
+(define getRandomElement (lambda (L n)
+                           (getNth L (random n))))
+(getRandomElement '(1 2 3) 2)
+(getRandomElement '(3 4 '(2 3) 4) 3)
